@@ -1,0 +1,70 @@
+# gitignore example to control our repository with petalinux & vivado project
+# 24/02/2026 by Eng Christian Rangel
+# Vigo @ Gradiant
+
+# =========================================================
+# GITIGNORE GLOBAL AGNOSTICO (Basado en Doc. Oficial AMD)
+# =========================================================
+
+# 1. BLOQUEO TOTAL (Defensivo)
+*
+
+# 2. PERMITIR DIRECTORIOS (Para navegación de Git)
+!*/
+
+# ---------------------------------------------------------
+# VIVADO (HW) - Reglas Agnosticas
+# ---------------------------------------------------------
+!*/*.xpr
+!*/*.tcl
+!*/*.xsa
+!*/**/*.v
+!*/**/*.vhd
+!*/**/*.sv
+!*/**/*.xdc
+!*/**/*.bd
+!*/**/*.xml
+
+# Limpieza de temporales Vivado
+**/vivado_*.str
+**/vivado_*.jou
+**/vivado_*.log
+**/.Xil/
+**/*.runs/
+**/*.cache/
+**/*.hw/
+**/*.ip_user_files/
+**/*.gen/
+**/*.sim/
+
+# ---------------------------------------------------------
+# PETALINUX (SW) - Basado en Doc. Oficial
+# ---------------------------------------------------------
+# Permitir carpetas de configuracion y metadatos vitales
+!*/project-spec/
+!*/config
+!*/rootfs_config
+
+# Regla especifica Doc: Ignorar .petalinux pero mantener metadata
+!*/.petalinux/
+*/.petalinux/*
+!*/.petalinux/metadata
+
+# Exclusiones explicitas de la documentacion
+**/build/
+**/images/linux/
+**/pre-built/linux/
+**/components/plnx-workspace/
+**/components/yocto/
+
+# Archivos basura segun documentacion (Recursivo)
+**/*.old
+**/*.o
+**/*.log
+**/*.jou
+
+# ---------------------------------------------------------
+# EXCEPCIONES GLOBALES
+# ---------------------------------------------------------
+!.gitignore
+!README.md
