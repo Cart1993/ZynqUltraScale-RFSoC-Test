@@ -42,6 +42,13 @@
 # ---------------------------------------------------------
 # Permitir carpetas de configuracion y metadatos vitales
 !*/project-spec/
+!*/project-spec/**/
+!*/project-spec/**/*.cfg
+!*/project-spec/**/*.conf
+!*/project-spec/**/*.dtsi
+!*/project-spec/**/*.bbappend
+!*/project-spec/hw-description/metadata
+
 !*/config
 !*/rootfs_config
 
