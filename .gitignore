@@ -40,17 +40,30 @@
 # ---------------------------------------------------------
 # PETALINUX (SW) - Basado en Doc. Oficial
 # ---------------------------------------------------------
-# Permitir carpetas de configuracion y metadatos vitales
-!*/project-spec/
-!*/project-spec/**/
-!*/project-spec/**/*.cfg
-!*/project-spec/**/*.conf
-!*/project-spec/**/*.dtsi
-!*/project-spec/**/*.bbappend
-!*/project-spec/hw-description/metadata
+# 1. Abrir la puerta a las carpetas principales
+!**/project-spec/
+!**/project-spec/meta-user/
+!**/project-spec/configs/
+!**/project-spec/hw-description/
+!**/project-spec/decoupling-dtsi/
 
-!*/config
-!*/rootfs_config
+# 2. Autorizar TODO el contenido de esas carpetas (incluyendo subcarpetas)
+!**/project-spec/meta-user/**
+!**/project-spec/configs/**
+!**/project-spec/hw-description/**
+!**/project-spec/decoupling-dtsi/**
+
+# 3. Autorizar archivos sueltos en la raíz de project-spec
+!**/project-spec/attributes
+!**/project-spec/config
+!**/project-spec/rootfs_config
+
+# 4. EXCEPCIONES: Limpiar basura de las carpetas autorizadas
+**/project-spec/**/*.old
+**/project-spec/**/*.log
+**/project-spec/**/.Xil/
+**/project-spec/configs/.statistics
+**project-spec/hw-description/psu_init.*
 
 # Regla especifica Doc: Ignorar .petalinux pero mantener metadata
 !*/.petalinux/
