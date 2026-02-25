@@ -63,7 +63,7 @@
 **/project-spec/**/*.log
 **/project-spec/**/.Xil/
 **/project-spec/configs/.statistics
-**project-spec/hw-description/psu_init.*
+**/project-spec/hw-description/psu_init.*
 
 # Regla especifica Doc: Ignorar .petalinux pero mantener metadata
 !*/.petalinux/
@@ -91,4 +91,4 @@
 # ---------------------------------------------------------
 # PERSONALIZED SCRIPTS
 # ---------------------------------------------------------
-!*/copyToSD.sh
+!**/**/copyToSD.sh
